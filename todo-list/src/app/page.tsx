@@ -1,11 +1,19 @@
 'use client';
 import { useState } from "react";
 
-
-
 export default function Home() {
   const [input, setInput]: any = useState('');
   const [task, setTask]: any = useState([]);
+  const [style, setStyle] = useState("not-done")
+
+  const changeStyle = () => {
+    if (style !== "done") {
+      setStyle("done")
+    } else {
+      setStyle("not-done")
+    }
+  }
+
   console.log(task)
   return (
     <div className='container flex flex-col items-center'>
@@ -19,10 +27,10 @@ export default function Home() {
       }}>add task</button>
 
 
-      <ul>
+      <ul className="mt-5">
         {task.map((todo: any, key: any) => {
           return (
-            <li key={key}>{todo}</li>
+            <li className={style} onDoubleClick={changeStyle} key={key}>{todo}</li>
           )
         })}
 
