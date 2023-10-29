@@ -9,11 +9,11 @@ export default function Home() {
 
   console.log(task)
   return (
-    <div className='container flex flex-col items-center mx-auto my-auto'>
-      <input type="text" name="task" id="task" value={input} style={{ width: "50%", padding: "10px", color: 'black' }} placeholder="what needs to be done?" onChange={(event) => {
+    <div className='container flex flex-col items-center mx-auto mt-[2rem]'>
+      <input type="text" name="task" id="task" value={input} style={{ width: "50%", padding: "10px", color: 'black', borderRadius: "10px" }} placeholder="what needs to be done?" onChange={(event) => {
         setInput(event.target.value)
       }} />
-      <button onClick={() => {
+      <button className='mt-5 h-10 w-1/4 rounded-md bg-blue-500 hover:bg-blue-700' onClick={() => {
         setTask([...task, input])
         setInput("")
       }}>add task</button>

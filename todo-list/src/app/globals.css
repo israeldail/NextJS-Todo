@@ -27,9 +27,9 @@ body {
 }
 
 .done {
-  text-decoration: line-through;
+  background-color: green;
 }
 
 .not-done {
-  text-decoration: none;
+  background-color: white;
 }
