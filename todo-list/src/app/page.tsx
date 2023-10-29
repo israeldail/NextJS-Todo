@@ -1,18 +1,11 @@
 'use client';
 import { useState } from "react";
+import { TodoItem } from "@/components/todoItem";
 
 export default function Home() {
   const [input, setInput]: any = useState('');
   const [task, setTask]: any = useState([]);
-  const [style, setStyle] = useState("not-done")
 
-  const changeStyle = () => {
-    if (style !== "done") {
-      setStyle("done")
-    } else {
-      setStyle("not-done")
-    }
-  }
 
   console.log(task)
   return (
@@ -30,7 +23,7 @@ export default function Home() {
       <ul className="mt-5">
         {task.map((todo: any, key: any) => {
           return (
-            <li className={style} onDoubleClick={changeStyle} key={key}>{todo}</li>
+            <li><TodoItem todo={todo} key={key} /></li>
           )
         })}
 
