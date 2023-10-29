@@ -22,7 +22,10 @@ export default function Home() {
       <ul className="mt-5">
         {task.map((todo: any, key: any) => {
           return (
-            <li><TodoItem todo={todo} key={key} /></li>
+            <div className='flex flex-row'>
+              <li><TodoItem todo={todo} key={key} /></li>
+              <span className={`flex flex-row justify-center items-center h-[50px] w-[50px] mt-[1rem] bg-white text-black rounded-md hover:cursor-pointer hover:bg-red-700`}>&#10005;</span>
+            </div>
           )
         })}
 
