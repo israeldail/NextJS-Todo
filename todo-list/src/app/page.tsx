@@ -6,6 +6,12 @@ export default function Home() {
   const [input, setInput]: any = useState('');
   const [task, setTask]: any = useState([]);
 
+  const deleteTask = (index: any) => {
+    let reducedTask = [...task]
+    reducedTask.splice(index,1)
+
+    setTask(reducedTask)
+  }
 
   console.log(task)
   return (
@@ -24,7 +30,7 @@ export default function Home() {
           return (
             <div className='flex flex-row'>
               <li><TodoItem todo={todo} key={key} /></li>
-              <span className={`flex flex-row justify-center items-center h-[50px] w-[50px] mt-[1rem] bg-white text-black rounded-md hover:cursor-pointer hover:bg-red-700`}>&#10005;</span>
+              <span className={`flex flex-row justify-center items-center ml-2 h-[50px] w-[50px] mt-[1rem] bg-white text-black rounded-md hover:cursor-pointer hover:bg-red-700`} onClick={() => deleteTask(key)}>&#10005;</span>
             </div>
           )
         })}
