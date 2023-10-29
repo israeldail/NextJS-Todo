@@ -9,8 +9,7 @@ export default function Home() {
 
   console.log(task)
   return (
-    <div className='container flex flex-col items-center'>
-      <h1 className='text-7xl mt-6'>todo list</h1>
+    <div className='container flex flex-col items-center mx-auto my-auto'>
       <input type="text" name="task" id="task" value={input} style={{ width: "50%", padding: "10px", color: 'black' }} placeholder="what needs to be done?" onChange={(event) => {
         setInput(event.target.value)
       }} />
